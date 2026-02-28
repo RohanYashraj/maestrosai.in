@@ -24,6 +24,9 @@ export const metadata: Metadata = {
   description: "AI systems insurers can trust.",
 };
 
+import { Navbar } from "@/components/nav/Navbar";
+import { Footer } from "@/components/footer/Footer";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -34,7 +37,11 @@ export default function RootLayout({
       <body
         className={`${ibmPlexSans.variable} ${ibmPlexSerif.variable} ${geistMono.variable} font-sans antialiased`}
       >
-        {children}
+        <div className="flex min-h-screen flex-col">
+          <Navbar />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </div>
       </body>
     </html>
   );
