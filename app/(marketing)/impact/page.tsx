@@ -1,10 +1,12 @@
+import { Impact } from "@/components/marketing/Impact";
+import { homeCopy } from "@/content/marketing/home";
+import { CTABanner } from "@/components/marketing/CTABanner";
+
 export default function ImpactPage() {
   return (
-    <div className="container py-24">
-      <h1 className="text-4xl font-bold italic">Impact</h1>
-      <p className="mt-4 text-muted-foreground">
-        Measurable outcomes and case studies coming soon.
-      </p>
+    <div className="flex flex-col w-full">
+      <Impact {...homeCopy.impact} />
+      <CTABanner {...homeCopy.cta} />
     </div>
   );
 }

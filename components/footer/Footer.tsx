@@ -102,11 +102,8 @@ export function Footer() {
             </h3>
             <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
               <li>
-                <Link
-                  href="/insights"
-                  className="hover:text-ink transition-colors"
-                >
-                  Insights
+                <Link href="/blog" className="hover:text-ink transition-colors">
+                  Blog
                 </Link>
               </li>
               <li>

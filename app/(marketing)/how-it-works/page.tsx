@@ -1,10 +1,12 @@
+import { HowItWorks } from "@/components/marketing/HowItWorks";
+import { homeCopy } from "@/content/marketing/home";
+import { CTABanner } from "@/components/marketing/CTABanner";
+
 export default function HowItWorksPage() {
   return (
-    <div className="container py-24">
-      <h1 className="text-4xl font-bold italic">How It Works</h1>
-      <p className="mt-4 text-muted-foreground">
-        Process and methodology overview coming soon.
-      </p>
+    <div className="flex flex-col w-full">
+      <HowItWorks {...homeCopy.howItWorks} />
+      <CTABanner {...homeCopy.cta} />
     </div>
   );
 }
