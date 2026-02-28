@@ -12,14 +12,14 @@ interface ImpactProps {
 
 export function Impact({ title, items }: ImpactProps) {
   return (
-    <section className="py-24 md:py-32 bg-surface">
+    <section className="py-24 md:py-32 bg-background">
       <Container>
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-24 gap-8">
           <div className="max-w-xl">
             <span className="text-sm font-bold tracking-[0.2em] text-accent uppercase block mb-6">
               The Results
             </span>
-            <h2 className="text-3xl md:text-5xl font-serif font-bold text-ink leading-tight">
+            <h2 className="text-balance text-3xl md:text-5xl font-serif font-bold text-ink leading-tight">
               {title}
             </h2>
           </div>
@@ -34,8 +34,8 @@ export function Impact({ title, items }: ImpactProps) {
                   {item.metric.split(" ").slice(1).join(" ")}
                 </span>
               </div>
-              <div className="pt-8 border-t border-ink/5">
-                <p className="text-lg text-ink font-bold mb-2">
+              <div className="pt-8 border-t border-border/70">
+                <p className="text-lg text-ink font-semibold mb-2">
                   {item.context.split(" ").slice(0, 3).join(" ")}
                 </p>
                 <p className="text-sm text-muted-foreground leading-relaxed italic">

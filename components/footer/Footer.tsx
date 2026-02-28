@@ -3,14 +3,11 @@ import { Container } from "@/components/ui/container";
 
 export function Footer() {
   return (
-    <footer className="border-t bg-muted/30">
+    <footer className="border-t border-border/60 bg-muted/40">
       <Container className="py-12 md:py-16">
         <div className="grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-5">
           <div className="col-span-2 lg:col-span-2">
-            <Link
-              href="/"
-              className="text-xl font-serif font-bold tracking-tight"
-            >
+            <Link href="/" className="text-xl font-serif font-bold tracking-tight">
               MaestrosAI
             </Link>
             <p className="mt-4 text-sm text-muted-foreground max-w-xs leading-relaxed">
@@ -19,7 +16,7 @@ export function Footer() {
             </p>
           </div>
           <div>
-            <h3 className="text-sm font-bold uppercase tracking-wider text-ink/70">
+            <h3 className="text-xs font-bold uppercase tracking-[0.22em] text-ink/70">
               Solutions
             </h3>
             <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
@@ -58,7 +55,7 @@ export function Footer() {
             </ul>
           </div>
           <div>
-            <h3 className="text-sm font-bold uppercase tracking-wider text-ink/70">
+            <h3 className="text-xs font-bold uppercase tracking-[0.22em] text-ink/70">
               Use Cases
             </h3>
             <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
@@ -97,7 +94,7 @@ export function Footer() {
             </ul>
           </div>
           <div>
-            <h3 className="text-sm font-bold uppercase tracking-wider text-ink/70">
+            <h3 className="text-xs font-bold uppercase tracking-[0.22em] text-ink/70">
               Resources
             </h3>
             <ul className="mt-4 space-y-2 text-sm text-muted-foreground">

@@ -13,13 +13,13 @@ interface CapabilitiesProps {
 
 export function Capabilities({ title, items }: CapabilitiesProps) {
   return (
-    <section className="py-24 md:py-32 bg-muted/20 border-y border-ink/5">
+    <section className="py-24 md:py-32 bg-muted/40 border-y border-border/60">
       <Container>
         <div className="text-center max-w-3xl mx-auto mb-20">
           <span className="text-sm font-bold tracking-[0.2em] text-accent uppercase block mb-6">
             Technical Stack
           </span>
-          <h2 className="text-3xl md:text-5xl font-serif font-bold text-ink mb-8 leading-tight">
+          <h2 className="text-balance text-3xl md:text-5xl font-serif font-bold text-ink mb-4 leading-tight">
             {title}
           </h2>
         </div>
@@ -28,12 +28,12 @@ export function Capabilities({ title, items }: CapabilitiesProps) {
           {items.map((item, index) => (
             <div key={index} className="flex gap-6 group">
               <div className="shrink-0 mt-1">
-                <div className="w-10 h-10 rounded-sm bg-surface border border-ink/5 flex items-center justify-center group-hover:border-accent group-hover:bg-accent/5 transition-colors duration-300">
-                  <CheckCircle2 className="w-5 h-5 text-accent opacity-40 group-hover:opacity-100 transition-opacity" />
+                <div className="flex h-10 w-10 items-center justify-center rounded-full border border-border/70 bg-surface/95 group-hover:border-accent group-hover:bg-accent/5 transition-colors duration-300">
+                  <CheckCircle2 className="h-5 w-5 text-accent opacity-40 group-hover:opacity-100 transition-opacity" />
                 </div>
               </div>
               <div>
-                <h3 className="text-lg font-bold text-ink mb-2 group-hover:text-accent transition-colors">
+                <h3 className="text-lg font-semibold text-ink mb-2 group-hover:text-accent transition-colors">
                   {item.title}
                 </h3>
                 <p className="text-sm text-muted-foreground leading-relaxed italic">

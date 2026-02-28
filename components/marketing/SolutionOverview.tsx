@@ -16,16 +16,16 @@ export function SolutionOverview({
   pillars,
 }: SolutionOverviewProps) {
   return (
-    <section className="py-24 md:py-32 bg-surface border-b border-ink/5">
+    <section className="py-24 md:py-32 bg-background border-y border-border/60">
       <Container>
         <div className="max-w-3xl mb-20">
           <span className="text-sm font-bold tracking-[0.2em] text-accent uppercase block mb-6">
             The Solution
           </span>
-          <h2 className="text-3xl md:text-5xl font-serif font-bold text-ink mb-8">
+          <h2 className="text-balance text-3xl md:text-5xl font-serif font-bold text-ink mb-6">
             {title}
           </h2>
-          <p className="text-xl text-muted-foreground leading-relaxed font-light">
+          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed font-light">
             {body}
           </p>
         </div>
@@ -34,7 +34,7 @@ export function SolutionOverview({
           {pillars.map((pillar, index) => (
             <Card
               key={index}
-              className="border-none shadow-none rounded-none bg-muted/30 p-8 flex flex-col justify-between group h-full"
+              className="group h-full border-none bg-surface/95 p-8 flex flex-col justify-between"
             >
               <div>
                 <CardHeader className="p-0 mb-6">

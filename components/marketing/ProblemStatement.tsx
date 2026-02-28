@@ -12,11 +12,13 @@ export function ProblemStatement({
   points,
 }: ProblemStatementProps) {
   return (
-    <section className="py-24 md:py-32 bg-ink text-surface overflow-hidden relative">
-      {/* Technical accent lines */}
-      <div className="absolute top-0 right-0 w-64 h-64 border-r border-t border-surface/5 -mr-32 -mt-32" />
+    <section className="relative overflow-hidden bg-ink text-surface py-24 md:py-32">
+      {/* Ledger grid overlay */}
+      <div className="pointer-events-none absolute inset-x-0 -top-1/2 h-[140%] bg-grid-elevated opacity-[0.09]" />
+      {/* Technical accent frame */}
+      <div className="absolute top-0 right-0 -mr-32 -mt-32 h-64 w-64 border-r border-t border-surface/10" />
 
-      <Container>
+      <Container className="relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
           <div className="sticky top-24">
             <span className="text-sm font-bold tracking-[0.2em] text-accent uppercase block mb-6 px-3 py-1 border border-accent/20 rounded-full w-fit">
@@ -34,7 +36,7 @@ export function ProblemStatement({
             {points.map((point, index) => (
               <div
                 key={index}
-                className="group relative p-8 border border-surface/10 bg-surface/2 hover:bg-surface/5 transition-all duration-300"
+                className="group relative rounded-lg border border-surface/10 bg-surface/5 px-8 py-7 transition-all duration-300 hover:border-accent/40 hover:bg-surface/10"
               >
                 <div className="absolute top-0 left-0 w-[2px] h-0 bg-accent group-hover:h-full transition-all duration-500" />
                 <div className="flex gap-6 items-start">

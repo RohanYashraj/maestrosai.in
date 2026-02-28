@@ -28,7 +28,7 @@ export function Section({
         "py-20 md:py-28",
         {
           "bg-background": variant === "default",
-          "bg-muted": variant === "muted",
+          "bg-muted/60": variant === "muted",
           "bg-ink text-surface": variant === "ink",
         },
         className,
@@ -37,19 +37,20 @@ export function Section({
     >
       <Container size={containerSize}>
         {(eyebrow || title || description) && (
-          <div className="mb-12 max-w-3xl">
+          <div className="mb-14 max-w-3xl">
             {eyebrow && (
-              <span className="text-sm font-semibold tracking-wider text-accent uppercase block mb-3">
+              <span className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.22em] text-accent/85 uppercase mb-4">
+                <span className="h-px w-6 bg-accent/40" />
                 {eyebrow}
               </span>
             )}
             {title && (
-              <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">
+              <h2 className="text-balance text-3xl md:text-4xl font-serif font-bold tracking-tight mb-4">
                 {title}
               </h2>
             )}
             {description && (
-              <p className="text-lg text-muted-foreground leading-relaxed">
+              <p className="text-base md:text-lg text-muted-foreground/95 leading-relaxed">
                 {description}
               </p>
             )}

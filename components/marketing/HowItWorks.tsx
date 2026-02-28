@@ -13,20 +13,23 @@ interface HowItWorksProps {
 
 export function HowItWorks({ title, steps }: HowItWorksProps) {
   return (
-    <section className="py-24 md:py-32 bg-ink text-surface overflow-hidden">
-      <Container>
+    <section className="relative py-24 md:py-32 bg-ink text-surface overflow-hidden">
+      {/* Subtle grid background */}
+      <div className="pointer-events-none absolute inset-x-0 -top-1/2 h-[140%] bg-grid-elevated opacity-[0.06]" />
+
+      <Container className="relative z-10">
         <div className="max-w-3xl mb-24">
           <span className="text-sm font-bold tracking-[0.2em] text-accent uppercase block mb-6">
             The Methodology
           </span>
-          <h2 className="text-3xl md:text-5xl font-serif font-bold leading-tight">
+          <h2 className="text-balance text-3xl md:text-5xl font-serif font-bold leading-tight">
             {title}
           </h2>
         </div>
 
         <div className="relative">
           {/* Connecting line */}
-          <div className="absolute left-[39px] top-0 h-full w-px bg-surface/10 hidden md:block" />
+          <div className="absolute left-[39px] top-0 h-full w-px bg-surface/15 hidden md:block" />
 
           <div className="space-y-20">
             {steps.map((item, index) => (
@@ -35,7 +38,7 @@ export function HowItWorks({ title, steps }: HowItWorksProps) {
                 className="relative flex flex-col md:flex-row gap-8 md:gap-24 items-start group"
               >
                 <div className="shrink-0 relative z-10">
-                  <div className="w-20 h-20 rounded-full bg-ink border border-surface/20 flex items-center justify-center text-xl font-mono font-bold group-hover:border-accent group-hover:text-accent transition-all duration-300">
+                  <div className="w-20 h-20 rounded-full bg-ink border border-surface/30 flex items-center justify-center text-xl font-mono font-bold group-hover:border-accent group-hover:text-accent transition-all duration-300">
                     {item.step}
                   </div>
                 </div>

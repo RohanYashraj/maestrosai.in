@@ -39,23 +39,28 @@
 }
 
 :root {
-  --radius: 0.25rem; /* More technical, less rounded */
-  --background: oklch(0.99 0.01 210); /* Off-white with slight cool tint */
-  --foreground: oklch(0.15 0.02 240); /* Deep navy/charcoal */
+  /* Softer radius with a more contemporary feel */
+  --radius: 0.5rem;
 
-  --ink: oklch(0.15 0.02 240);
-  --surface: oklch(0.99 0.01 210);
-  --muted: oklch(0.92 0.01 240);
-  --accent: oklch(0.6 0.15 200); /* Teal/Cyan */
-  --highlight: oklch(0.85 0.15 80); /* Restrained Amber */
+  /* Light, editorial base with cooler ink */
+  --background: oklch(0.98 0.015 235);
+  --foreground: oklch(0.16 0.03 260);
+
+  --ink: oklch(0.16 0.03 260);
+  --surface: oklch(0.99 0.01 235);
+  --muted: oklch(0.93 0.02 245);
+
+  /* Luminous cyan accent with an actuarial amber highlight */
+  --accent: oklch(0.67 0.12 215);
+  --highlight: oklch(0.8 0.16 80);
 
   --primary: var(--ink);
   --primary-foreground: var(--surface);
   --secondary: var(--muted);
   --secondary-foreground: var(--ink);
 
-  --border: oklch(0.85 0.01 240);
-  --input: oklch(0.92 0.01 240);
+  --border: oklch(0.86 0.01 250);
+  --input: oklch(0.94 0.015 245);
   --ring: var(--accent);
 
   --card: var(--surface);
@@ -64,21 +69,29 @@
   --popover-foreground: var(--ink);
 
   --destructive: oklch(0.55 0.2 25);
+
+  /* Support shadcn + Tailwind tokens explicitly */
+  --muted-foreground: oklch(0.47 0.03 260);
+  --accent-foreground: oklch(0.15 0.02 250);
 }
 
 .dark {
-  --background: oklch(0.15 0.02 240);
-  --foreground: oklch(0.95 0.01 210);
+  /* Optional dark variant keeping the same palette logic */
+  --background: oklch(0.18 0.04 260);
+  --foreground: oklch(0.96 0.015 240);
 
-  --ink: oklch(0.95 0.01 210);
-  --surface: oklch(0.15 0.02 240);
-  --muted: oklch(0.25 0.02 240);
+  --ink: oklch(0.96 0.015 240);
+  --surface: oklch(0.14 0.03 255);
+  --muted: oklch(0.24 0.03 260);
 
-  --border: oklch(0.25 0.02 240);
-  --input: oklch(0.25 0.02 240);
+  --border: oklch(0.3 0.03 260);
+  --input: oklch(0.24 0.03 260);
 
   --card: var(--surface);
   --card-foreground: var(--ink);
+
+  --muted-foreground: oklch(0.72 0.02 255);
+  --accent-foreground: oklch(0.14 0.03 255);
 }
 
 @layer base {
@@ -87,5 +100,38 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  /* Subtle actuarial grid background for hero and CTA blocks */
+  .bg-grid-elevated {
+    background-image:
+      linear-gradient(
+        to right,
+        color-mix(in oklch, var(--ink) 6%, transparent) 1px,
+        transparent 1px
+      ),
+      linear-gradient(
+        to bottom,
+        color-mix(in oklch, var(--ink) 6%, transparent) 1px,
+        transparent 1px
+      );
+    background-size: 32px 32px;
+  }
+
+  /* Soft aurora wash for key surfaces */
+  .bg-aurora {
+    background:
+      radial-gradient(circle at top left, color-mix(in oklch, var(--accent) 35%, transparent) 0, transparent 55%),
+      radial-gradient(circle at bottom right, color-mix(in oklch, var(--highlight) 30%, transparent) 0, transparent 60%),
+      var(--background);
+  }
+
+  /* Elevated card shell used across impact / solution / use case blocks */
+  .card-elevated {
+    box-shadow:
+      0 18px 45px -24px color-mix(in oklch, var(--ink) 40%, transparent);
+    border-radius: var(--radius-lg);
   }
 }
