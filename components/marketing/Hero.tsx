@@ -29,7 +29,7 @@ export function Hero({
       />
 
       {/* Structural accent line */}
-      <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-ink/10 to-transparent" />
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-ink/10 to-transparent" />
 
       <Container className="relative z-10">
         <div className="max-w-4xl">

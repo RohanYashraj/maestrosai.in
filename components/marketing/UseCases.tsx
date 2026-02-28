@@ -1,5 +1,4 @@
 import { Container } from "@/components/ui/container";
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 
 interface UseCase {
   role: string;
@@ -41,7 +40,7 @@ export function UseCases({ title, items }: UseCasesProps) {
                 FOR {item.role}
               </h3>
               <p className="text-2xl font-serif italic text-ink leading-relaxed">
-                "{item.impact}"
+                &ldquo;{item.impact}&rdquo;
               </p>
             </div>
           ))}
