@@ -6,7 +6,6 @@ export default function CapabilitiesPage() {
   return (
     <div className="flex flex-col w-full">
       <Capabilities {...homeCopy.capabilities} />
-      <CTABanner {...homeCopy.cta} />
     </div>
   );
 }

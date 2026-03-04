@@ -11,9 +11,6 @@ export default function HomePage() {
     <div className="flex flex-col w-full">
       <Hero {...homeCopy.hero} />
       <ProblemStatement {...homeCopy.problem} />
-      <WhyUs {...homeCopy.whyUs} />
-      <HowItWorks {...homeCopy.howItWorks} />
-      <Impact {...homeCopy.impact} />
       <CTABanner {...homeCopy.cta} />
     </div>
   );

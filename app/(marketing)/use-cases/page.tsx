@@ -6,7 +6,6 @@ export default function UseCasesPage() {
   return (
     <div className="flex flex-col w-full">
       <UseCases {...homeCopy.useCases} />
-      <CTABanner {...homeCopy.cta} />
     </div>
   );
 }

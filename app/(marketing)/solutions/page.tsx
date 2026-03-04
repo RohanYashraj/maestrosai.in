@@ -6,7 +6,6 @@ export default function SolutionsPage() {
   return (
     <div className="flex flex-col w-full">
       <SolutionOverview {...homeCopy.solutions} />
-      <CTABanner {...homeCopy.cta} />
     </div>
   );
 }

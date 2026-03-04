@@ -44,12 +44,6 @@ export function Navbar() {
             >
               Use Cases
             </Link>
-            <Link
-              href="/blog"
-              className="text-muted-foreground hover:text-ink transition-colors"
-            >
-              Blog
-            </Link>
           </nav>
           <div className="flex items-center">
             <Button asChild variant="accent" size="sm" className="hidden sm:inline-flex">
