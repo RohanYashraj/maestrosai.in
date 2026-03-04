@@ -20,7 +20,7 @@ export function ProblemStatement({
 
       <Container className="relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
-          <div className="sticky top-24">
+          <div className="lg:sticky lg:top-24">
             <span className="text-sm font-bold tracking-[0.2em] text-accent uppercase block mb-6 px-3 py-1 border border-accent/20 rounded-full w-fit">
               The Friction
             </span>

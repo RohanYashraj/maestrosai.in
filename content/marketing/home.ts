@@ -2,7 +2,7 @@ export const homeCopy = {
   hero: {
     headline: "AI systems insurers can trust.",
     subhead:
-      "MaestrosAI designs and deploys customized AI layers that reduce time to market, automate repetitive workflows, and improve decision quality—without compromising compliance, auditability, or explainability.",
+      "MaestrosAI designs and deploys AI layers that streamline underwriting and claims while staying compliant and explainable.",
     primaryCta: { label: "Request a demo", href: "/contact#demo" },
     secondaryCta: { label: "Explore use cases", href: "/use-cases" },
     trustLine:
@@ -10,11 +10,10 @@ export const homeCopy = {
   },
   problem: {
     title: "Insurance decisions are getting harder—your systems aren’t.",
-    body: "Executives need faster outcomes, actuaries need defensible assumptions, and operations teams need throughput. Legacy platforms and manual processes create a decision burden that slows growth and increases leakage.",
+    body: "Teams are under pressure to move faster, justify every decision, and keep leakage under control. Manual work and legacy tools make that increasingly hard to do.",
     points: [
       "Slow product iteration and pricing refresh cycles",
       "Claims triage bottlenecks and inconsistent handling",
-      "Underwriting decision drift across teams and channels",
       "Analytics locked in spreadsheets and brittle pipelines",
     ],
   },
@@ -180,7 +179,7 @@ export const homeCopy = {
   },
   cta: {
     title: "See MaestrosAI on your workflows.",
-    body: "Tell us your line of business and where decisions stall. We’ll show a tailored walkthrough and a pragmatic path to production.",
+    body: "Tell us your line of business and where decisions stall. We’ll walk through a focused demo and a pragmatic path to production.",
     buttonLabel: "Request a tailored walkthrough",
   },
 };
