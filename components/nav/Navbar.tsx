@@ -15,10 +15,14 @@ export function Navbar() {
     <header className="sticky top-0 z-50 w-full border-b border-border/60 bg-background/90 backdrop-blur-xl supports-backdrop-filter:bg-background/80">
       <div className="border-border/60">
         <Container className="flex h-16 items-center justify-between gap-6">
-          <Link href="/" className="flex items-center gap-2" onClick={closeMenu}>
+          <Link
+            href="/"
+            className="flex items-center gap-2"
+            onClick={closeMenu}
+          >
             <div className="flex h-8 w-8 items-center justify-center rounded-full border border-border/70 bg-muted/60">
               <span className="text-xs font-mono font-semibold text-ink/80">
-                MA
+                AI
               </span>
             </div>
             <div className="flex flex-col leading-tight">
