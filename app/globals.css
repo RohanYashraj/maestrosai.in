@@ -3,6 +3,14 @@
 @import "shadcn/tailwind.css";
 @plugin "@tailwindcss/typography";
 
+/*
+ * Design language: refined minimalism
+ * - Typography: IBM Plex Sans (body), IBM Plex Serif (headings), Geist Mono (code)
+ * - Palette: ink, surface, muted, accent, highlight (oklch); avoid generic AI aesthetics
+ * - Utilities: bg-aurora, bg-grid-elevated, card-elevated for key surfaces
+ * - Philosophy: simple, attractive, informative
+ */
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
