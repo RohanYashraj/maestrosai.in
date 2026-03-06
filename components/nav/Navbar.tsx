@@ -43,18 +43,6 @@ export function Navbar() {
               >
                 Solutions
               </Link>
-              <Link
-                href="/capabilities"
-                className="text-muted-foreground hover:text-ink transition-colors"
-              >
-                Capabilities
-              </Link>
-              <Link
-                href="/use-cases"
-                className="text-muted-foreground hover:text-ink transition-colors"
-              >
-                Use Cases
-              </Link>
             </nav>
             <div className="flex items-center gap-2">
               <Button
@@ -92,20 +80,6 @@ export function Navbar() {
                 onClick={closeMenu}
               >
                 Solutions
-              </Link>
-              <Link
-                href="/capabilities"
-                className="py-2 text-muted-foreground hover:text-ink transition-colors"
-                onClick={closeMenu}
-              >
-                Capabilities
-              </Link>
-              <Link
-                href="/use-cases"
-                className="py-2 text-muted-foreground hover:text-ink transition-colors"
-                onClick={closeMenu}
-              >
-                Use Cases
               </Link>
               <Button
                 asChild
