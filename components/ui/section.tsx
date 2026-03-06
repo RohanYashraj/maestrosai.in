@@ -8,6 +8,8 @@ interface SectionProps extends React.HTMLAttributes<HTMLElement> {
   description?: string;
   variant?: "default" | "muted" | "ink";
   containerSize?: "default" | "wide" | "narrow";
+  /** When false, children are not wrapped in Container (optional container wrapping). */
+  wrapWithContainer?: boolean;
 }
 
 export function Section({
@@ -17,10 +19,37 @@ export function Section({
   description,
   variant = "default",
   containerSize = "default",
+  wrapWithContainer = true,
   className,
   children,
   ...props
 }: SectionProps) {
+  const content = (
+    <>
+      {(eyebrow || title || description) && (
+        <div className="mb-14 max-w-3xl">
+          {eyebrow && (
+            <span className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.22em] text-accent/85 uppercase mb-4">
+              <span className="h-px w-6 bg-accent/40" />
+              {eyebrow}
+            </span>
+          )}
+          {title && (
+            <h2 className="text-balance text-3xl md:text-4xl font-serif font-bold tracking-tight text-ink mb-4">
+              {title}
+            </h2>
+          )}
+          {description && (
+            <p className="text-base md:text-lg text-muted-foreground/95 leading-relaxed">
+              {description}
+            </p>
+          )}
+        </div>
+      )}
+      {children}
+    </>
+  );
+
   return (
     <section
       id={id}
@@ -35,29 +64,11 @@ export function Section({
       )}
       {...props}
     >
-      <Container size={containerSize}>
-        {(eyebrow || title || description) && (
-          <div className="mb-14 max-w-3xl">
-            {eyebrow && (
-              <span className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.22em] text-accent/85 uppercase mb-4">
-                <span className="h-px w-6 bg-accent/40" />
-                {eyebrow}
-              </span>
-            )}
-            {title && (
-              <h2 className="text-balance text-3xl md:text-4xl font-serif font-bold tracking-tight mb-4">
-                {title}
-              </h2>
-            )}
-            {description && (
-              <p className="text-base md:text-lg text-muted-foreground/95 leading-relaxed">
-                {description}
-              </p>
-            )}
-          </div>
-        )}
-        {children}
-      </Container>
+      {wrapWithContainer ? (
+        <Container size={containerSize}>{content}</Container>
+      ) : (
+        content
+      )}
     </section>
   );
 }
