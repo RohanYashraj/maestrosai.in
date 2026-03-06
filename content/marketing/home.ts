@@ -4,7 +4,7 @@ export const homeCopy = {
     subhead:
       "MaestrosAI designs and deploys AI layers that streamline underwriting and claims while staying compliant and explainable.",
     primaryCta: { label: "Request a demo", href: "/contact#demo" },
-    secondaryCta: { label: "Explore solutions", href: "/solutions" },
+    secondaryCta: { label: "Explore solutions", href: "/#solutions" },
     trustLine:
       "Designed for enterprise constraints: data privacy, model governance, and regulator-ready explanations.",
   },
@@ -180,6 +180,6 @@ export const homeCopy = {
   cta: {
     title: "See MaestrosAI on your workflows.",
     body: "Tell us your line of business and where decisions stall. We’ll walk through a focused demo and a pragmatic path to production.",
-    buttonLabel: "Request a tailored walkthrough",
+    buttonLabel: "Request a demo",
   },
 };

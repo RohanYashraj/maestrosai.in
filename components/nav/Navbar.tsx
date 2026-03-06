@@ -35,52 +35,35 @@ export function Navbar() {
             </div>
           </Link>
 
-          <div className="flex items-center gap-6">
-            <nav className="hidden md:flex items-center gap-6 text-xs font-medium tracking-[0.16em] uppercase">
-              <Link
-                href="/solutions"
-                className="text-muted-foreground hover:text-ink transition-colors"
-              >
-                Solutions
-              </Link>
-            </nav>
-            <div className="flex items-center gap-2">
-              <Button
-                asChild
-                variant="accent"
-                size="sm"
-                className="hidden sm:inline-flex"
-              >
-                <Link href="/contact#demo">Request a demo</Link>
-              </Button>
-              <Button
-                type="button"
-                variant="outline"
-                size="icon"
-                className="inline-flex md:hidden"
-                onClick={() => setIsOpen((prev) => !prev)}
-                aria-label={isOpen ? "Close navigation" : "Open navigation"}
-              >
-                {isOpen ? (
-                  <X className="h-4 w-4" />
-                ) : (
-                  <Menu className="h-4 w-4" />
-                )}
-              </Button>
-            </div>
+          <div className="flex items-center gap-2">
+            <Button
+              asChild
+              variant="accent"
+              size="sm"
+              className="hidden sm:inline-flex"
+            >
+              <Link href="/contact#demo">Request a demo</Link>
+            </Button>
+            <Button
+              type="button"
+              variant="outline"
+              size="icon"
+              className="inline-flex md:hidden"
+              onClick={() => setIsOpen((prev) => !prev)}
+              aria-label={isOpen ? "Close navigation" : "Open navigation"}
+            >
+              {isOpen ? (
+                <X className="h-4 w-4" />
+              ) : (
+                <Menu className="h-4 w-4" />
+              )}
+            </Button>
           </div>
         </Container>
 
         {isOpen && (
           <div className="md:hidden border-t border-border/60 bg-background/95">
             <Container className="flex flex-col gap-2 py-4 text-xs font-medium tracking-[0.18em] uppercase">
-              <Link
-                href="/solutions"
-                className="py-2 text-muted-foreground hover:text-ink transition-colors"
-                onClick={closeMenu}
-              >
-                Solutions
-              </Link>
               <Button
                 asChild
                 variant="accent"

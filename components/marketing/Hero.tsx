@@ -49,18 +49,18 @@ export function Hero({
             <Button
               asChild
               size="lg"
-              variant="accent"
-              className="w-full sm:w-auto h-14 px-8 text-base"
-            >
-              <Link href={primaryCta.href}>{primaryCta.label}</Link>
-            </Button>
-            <Button
-              asChild
-              size="lg"
               variant="outline"
               className="w-full sm:w-auto h-14 px-8 text-base"
             >
               <Link href={secondaryCta.href}>{secondaryCta.label}</Link>
+            </Button>
+            <Button
+              asChild
+              size="lg"
+              variant="accent"
+              className="w-full sm:w-auto h-14 px-8 text-base"
+            >
+              <Link href={primaryCta.href}>{primaryCta.label}</Link>
             </Button>
           </div>
 
