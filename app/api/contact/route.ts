@@ -1,6 +1,10 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
-import { contactFormSchema } from "@/lib/contact";
+import {
+  contactFormSchema,
+  POSITION_OPTIONS,
+  INTEREST_OPTIONS,
+} from "@/lib/contact";
 
 // Avoid crashing if RESEND_API_KEY is not set during local dev
 const resend = process.env.RESEND_API_KEY
@@ -21,7 +25,12 @@ export async function POST(req: Request) {
       );
     }
 
-    const { name, email, company, role, area, message } = result.data;
+    const { name, email, company, message, interest, position } = result.data;
+
+    const positionLabel =
+      position && POSITION_OPTIONS.find((o) => o.value === position)?.label;
+    const interestLabel =
+      interest && INTEREST_OPTIONS.find((o) => o.value === interest)?.label;
 
     console.log(
       `[Contact Form] Submission received from ${name} (${email}) at ${company}`,
@@ -37,14 +46,31 @@ export async function POST(req: Request) {
       });
     }
 
+    const positionRow =
+      positionLabel &&
+      `
+            <tr>
+              <td style="padding: 8px 0; font-size: 13px; color: #666;">Position:</td>
+              <td style="padding: 8px 0; font-size: 14px; font-weight: bold;">${positionLabel}</td>
+            </tr>
+          `;
+    const interestRow =
+      interestLabel &&
+      `
+            <tr>
+              <td style="padding: 8px 0; font-size: 13px; color: #666;">Interest:</td>
+              <td style="padding: 8px 0; font-size: 14px; font-weight: bold;">${interestLabel}</td>
+            </tr>
+          `;
+
     const emailHtml = `
       <div style="font-family: 'IBM Plex Sans', sans-serif; color: #0a0a0a; line-height: 1.6; max-width: 600px; margin: 0 auto; border: 1px solid #f0f0f0; padding: 40px;">
         <div style="border-bottom: 2px solid #00d1b2; padding-bottom: 20px; margin-bottom: 30px;">
-          <h1 style="font-family: 'IBM Plex Serif', serif; font-size: 24px; font-weight: bold; margin: 0;">MaestrosAI <span style="font-weight: normal; color: #666;">| Contact Request</span></h1>
+          <h1 style="font-family: 'IBM Plex Serif', serif; font-size: 24px; font-weight: bold; margin: 0;">MaestrosAI <span style="font-weight: normal; color: #666;">| Demo Request</span></h1>
         </div>
 
         <p style="font-size: 16px;">Hello ${name},</p>
-        <p style="font-size: 16px;">Thank you for reaching out to MaestrosAI. We have received your inquiry regarding <strong>${area}</strong> and our team will get back to you shortly.</p>
+        <p style="font-size: 16px;">Thank you for reaching out to MaestrosAI. We have received your request and our team will get back to you shortly.</p>
         
         <div style="background-color: #f9f9f9; padding: 25px; border-left: 4px solid #0a0a0a; margin: 30px 0;">
           <h3 style="font-size: 14px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; margin-top: 0;">Submission Details</h3>
@@ -57,14 +83,8 @@ export async function POST(req: Request) {
               <td style="padding: 8px 0; font-size: 13px; color: #666;">Company:</td>
               <td style="padding: 8px 0; font-size: 14px;">${company}</td>
             </tr>
-            <tr>
-              <td style="padding: 8px 0; font-size: 13px; color: #666;">Role:</td>
-              <td style="padding: 8px 0; font-size: 14px;">${role}</td>
-            </tr>
-            <tr>
-              <td style="padding: 8px 0; font-size: 13px; color: #666;">Interest:</td>
-              <td style="padding: 8px 0; font-size: 14px; color: #00d1b2; font-weight: bold;">${area}</td>
-            </tr>
+            ${positionRow || ""}
+            ${interestRow || ""}
           </table>
         </div>
 
@@ -82,9 +102,9 @@ export async function POST(req: Request) {
 
     // Send email to team AND the person who sent it
     await resend.emails.send({
-      from: "MaestrosAI <newsletter@sutra.rohanyashraj.com>",
+      from: "MaestrosAI <maestrosai@sutra.rohanyashraj.com>",
       to: [email],
-      bcc: ["rohanyashraj@gmail.com", "satyasau@sssia.org"],
+      bcc: ["rohanyashraj@gmail.com", "satyasai@sssia.org"],
       replyTo: email,
       subject: `Requirement Received: ${name} (${company})`,
       html: emailHtml,
