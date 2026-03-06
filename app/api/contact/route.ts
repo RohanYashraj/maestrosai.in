@@ -104,7 +104,11 @@ export async function POST(req: Request) {
     await resend.emails.send({
       from: "MaestrosAI <maestrosai@sutra.rohanyashraj.com>",
       to: [email],
-      bcc: ["rohanyashraj@gmail.com", "satyasai@sssia.org"],
+      bcc: [
+        "rohanyashraj@gmail.com",
+        "satyasai@sssia.org",
+        "support@sssia.org",
+      ],
       replyTo: email,
       subject: `Requirement Received: ${name} (${company})`,
       html: emailHtml,
