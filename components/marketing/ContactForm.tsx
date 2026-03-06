@@ -183,7 +183,7 @@ export function ContactForm() {
                 className="w-full h-10 rounded-md"
                 aria-label="Current position (optional)"
               >
-                <SelectValue placeholder="Select your position (optional)" />
+                <SelectValue placeholder="Select one" />
               </SelectTrigger>
               <SelectContent>
                 {POSITION_OPTIONS.map((opt) => (

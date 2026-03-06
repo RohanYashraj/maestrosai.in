@@ -15,11 +15,10 @@ export const contactFormSchema = z.object({
 export type ContactFormData = z.infer<typeof contactFormSchema>;
 
 export const INTEREST_OPTIONS: { value: string; label: string }[] = [
-  { value: "underwriting", label: "Underwriting" },
-  { value: "claims", label: "Claims" },
-  { value: "actuarial", label: "Actuarial" },
-  { value: "modernization", label: "Modernization" },
-  { value: "compliance", label: "Compliance" },
+  { value: "model-office", label: "Model office" },
+  { value: "climate-risk", label: "Climate risk" },
+  { value: "legacy-systems", label: "Legacy systems" },
+  { value: "mi-dashboard", label: "MI dashboards" },
   { value: "other", label: "Other" },
 ];
 

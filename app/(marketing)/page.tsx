@@ -1,6 +1,8 @@
+import Link from "next/link";
 import { Hero } from "@/components/marketing/Hero";
 import { CTABanner } from "@/components/marketing/CTABanner";
 import { Section } from "@/components/ui/section";
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardHeader,
@@ -37,6 +39,9 @@ export default function HomePage() {
               <CardDescription className="text-base text-muted-foreground/95 leading-relaxed">
                 {usp.description}
               </CardDescription>
+              <Button asChild variant="outline" size="sm" className="mt-6">
+                <Link href="/model-office">Learn more</Link>
+              </Button>
             </CardContent>
           </Card>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

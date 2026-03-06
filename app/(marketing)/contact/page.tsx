@@ -14,7 +14,7 @@ export default function ContactPage() {
         id="demo"
         eyebrow="Get in touch"
         title="Request a demo"
-        description="Share your details and we’ll arrange a walkthrough of our solutions—underwriting, claims, actuarial, or legacy modernization."
+        description="Share your details and we’ll arrange a walkthrough of our solutions: agentic AI driven insurance model office, climate risk, legacy systems transformation, or dynamic MI dashboards with predictive capabilities."
       >
         <div className="max-w-2xl">
           <ContactForm />
