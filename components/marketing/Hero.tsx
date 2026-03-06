@@ -8,6 +8,8 @@ interface HeroProps {
   primaryCta: { label: string; href: string };
   secondaryCta: { label: string; href: string };
   trustLine?: string;
+  /** When false, the "Where MaestrosAI shows up" aside is hidden (e.g. for minimal landing). */
+  showAside?: boolean;
 }
 
 export function Hero({
@@ -16,6 +18,7 @@ export function Hero({
   primaryCta,
   secondaryCta,
   trustLine,
+  showAside = true,
 }: HeroProps) {
   return (
     <section className="relative overflow-hidden bg-aurora pt-24 pb-32">
@@ -25,7 +28,13 @@ export function Hero({
       {/* Structural accent line across the top */}
       <div className="absolute top-0 left-0 w-full h-px bg-linear-to-r from-transparent via-accent/40 to-transparent" />
 
-      <Container className="relative z-10 grid gap-16 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] items-start">
+      <Container
+        className={
+          showAside
+            ? "relative z-10 grid gap-16 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] items-start"
+            : "relative z-10"
+        }
+      >
         <div className="max-w-3xl">
           <header className="mb-12">
             <h1 className="text-balance text-4xl md:text-6xl lg:text-7xl font-serif font-bold tracking-tight text-ink leading-[1.03] mb-8">
@@ -74,6 +83,7 @@ export function Hero({
           )}
         </div>
 
+        {showAside && (
         <aside className="hidden lg:block">
           <div className="card-elevated bg-surface/95 border border-border/70 px-8 py-7">
             <p className="text-xs font-semibold tracking-[0.22em] uppercase text-accent/85 mb-4">
@@ -95,6 +105,7 @@ export function Hero({
             </ul>
           </div>
         </aside>
+        )}
       </Container>
     </section>
   );
