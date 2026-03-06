@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { IBM_Plex_Sans, IBM_Plex_Serif, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Navbar } from "@/components/nav/Navbar";
+import { Footer } from "@/components/footer/Footer";
+import { Analytics } from "@vercel/analytics/next";
 
 const ibmPlexSans = IBM_Plex_Sans({
   variable: "--font-ibm-plex-sans",
@@ -51,9 +54,6 @@ export const metadata: Metadata = {
   },
 };
 
-import { Navbar } from "@/components/nav/Navbar";
-import { Footer } from "@/components/footer/Footer";
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -86,6 +86,7 @@ export default function RootLayout({
           <main className="flex-1">{children}</main>
           <Footer />
         </div>
+        <Analytics />
       </body>
     </html>
   );
