@@ -142,4 +142,20 @@
       0 18px 45px -24px color-mix(in oklch, var(--ink) 40%, transparent);
     border-radius: var(--radius-lg);
   }
+
+  /* Phase 6: single restrained motion – staggered content reveal */
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(0.75rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.5s ease-out both;
+  }
 }

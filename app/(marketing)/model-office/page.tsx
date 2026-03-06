@@ -74,7 +74,7 @@ const layers = [
 
 export default function ModelOfficePage() {
   return (
-    <main className="flex-1">
+    <div className="flex-1">
       <Section
         eyebrow="Our key offering"
         title="Agentic AI–driven insurance model office"
@@ -227,6 +227,6 @@ export default function ModelOfficePage() {
           </div>
         </article>
       </Section>
-    </main>
+    </div>
   );
 }

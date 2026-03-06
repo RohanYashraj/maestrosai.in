@@ -9,7 +9,7 @@ export const metadata = {
 
 export default function ContactPage() {
   return (
-    <main className="flex-1">
+    <div className="flex-1">
       <Section
         id="demo"
         eyebrow="Get in touch"
@@ -20,6 +20,6 @@ export default function ContactPage() {
           <ContactForm />
         </div>
       </Section>
-    </main>
+    </div>
   );
 }

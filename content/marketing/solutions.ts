@@ -19,7 +19,7 @@ export const solutionsCopy = {
       id: "climate-risk",
       title: "Agentic AI solution for climate risk",
       description:
-        "Climate risk assessment and scenario modeling driven by agentic workflows, integrating external data and internal models for stress testing and disclosure readiness.",
+        "Climate risk assessment and scenario modeling driven by agentic workflows, integrating real-time global climate and geospatial data enables insurers to identify and quantify climate risks and internal models for stress testing and disclosure readiness.",
       isUsp: false,
     },
     {

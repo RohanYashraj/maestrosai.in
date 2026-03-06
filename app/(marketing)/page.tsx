@@ -26,7 +26,10 @@ export default function HomePage() {
         description={solutionsCopy.description}
       >
         <div className="space-y-10">
-          <Card className="border-accent/50 bg-surface shadow-[0_18px_45px_-24px_rgba(15,23,42,0.4)] ring-1 ring-accent/20">
+          <Card
+            className="animate-fade-in-up border-accent/50 bg-surface shadow-[0_18px_45px_-24px_rgba(15,23,42,0.4)] ring-1 ring-accent/20"
+            style={{ animationDelay: "0ms" }}
+          >
             <CardHeader>
               <span className="text-xs font-semibold tracking-[0.2em] uppercase text-accent mb-1">
                 {solutionsCopy.uspTagline}
@@ -45,15 +48,19 @@ export default function HomePage() {
             </CardContent>
           </Card>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {rest.map((item) => (
-              <Card key={item.id}>
+            {rest.map((item, index) => (
+              <Card
+                key={item.id}
+                className="animate-fade-in-up"
+                style={{ animationDelay: `${80 * (index + 1)}ms` }}
+              >
                 <CardHeader>
                   <CardTitle className="text-lg font-serif font-semibold text-ink">
                     {item.title}
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="text-sm leading-relaxed">
+                  <CardDescription className="text-sm leading-relaxed text-muted-foreground">
                     {item.description}
                   </CardDescription>
                 </CardContent>
