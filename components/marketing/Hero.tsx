@@ -37,6 +37,14 @@ export function Hero({
       >
         <div className="max-w-3xl">
           <header className="mb-12">
+            <Link
+              href="https://aiactuaries.org"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mb-6 inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-xs font-semibold tracking-wide text-white shadow-lg transition-all hover:opacity-95 hover:shadow-xl active:scale-[0.98] bg-linear-to-r from-[oklch(0.48_0.2_285)] via-[oklch(0.55_0.22_320)] to-[oklch(0.52_0.2_350)]"
+            >
+              Powered by aiactuaries.org
+            </Link>
             <h1 className="text-balance text-4xl md:text-6xl lg:text-7xl font-serif font-bold tracking-tight text-ink leading-[1.03] mb-8">
               {headline}
             </h1>
