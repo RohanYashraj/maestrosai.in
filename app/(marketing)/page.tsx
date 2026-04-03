@@ -42,9 +42,11 @@ export default function HomePage() {
               <CardDescription className="text-base text-muted-foreground/95 leading-relaxed">
                 {usp.description}
               </CardDescription>
-              <Button asChild variant="outline" size="sm" className="mt-6">
-                <Link href="/model-office">Learn more</Link>
-              </Button>
+              {usp.href ? (
+                <Button asChild variant="outline" size="sm" className="mt-6">
+                  <Link href={usp.href}>Read more</Link>
+                </Button>
+              ) : null}
             </CardContent>
           </Card>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -63,6 +65,11 @@ export default function HomePage() {
                   <CardDescription className="text-sm leading-relaxed text-muted-foreground">
                     {item.description}
                   </CardDescription>
+                  {item.href ? (
+                    <Button asChild variant="outline" size="sm" className="mt-4">
+                      <Link href={item.href}>Learn more</Link>
+                    </Button>
+                  ) : null}
                 </CardContent>
               </Card>
             ))}
