@@ -1,3 +1,12 @@
+export type SolutionOffering = {
+  id: string;
+  title: string;
+  description: string;
+  isUsp: boolean;
+  /** When set, the card shows a link button to this path. */
+  href?: string;
+};
+
 export const solutionsCopy = {
   eyebrow: "Models & frameworks",
   title: "AI solutions built for enterprise.",
@@ -9,11 +18,20 @@ export const solutionsCopy = {
 
   offerings: [
     {
+      id: "actuarial-agents-suite",
+      title: "MaestrosAI Actuarial Agents Suite",
+      description:
+        "A built product for actuarial agentic AI—reserving, pricing, validation, pensions, and reporting. We can deploy with your team; demos available.",
+      isUsp: true,
+      href: "/actuarial-agents-suite",
+    },
+    {
       id: "insurance-model-office",
       title: "Agentic AI driven insurance model office",
       description:
         "An end-to-end model office powered by agentic AI: from data ingestion and validation to pricing, reserving, and reporting—with full auditability and regulator-ready explanations.",
-      isUsp: true,
+      isUsp: false,
+      href: "/model-office",
     },
     {
       id: "climate-risk",
@@ -28,13 +46,6 @@ export const solutionsCopy = {
       description:
         "Bridge legacy policy, claims, and actuarial systems with modern agentic AI—APIs, orchestration, and human-in-the-loop controls without big-bang replacement.",
       isUsp: false,
-    },
-    {
-      id: "mi-dashboards",
-      title: "AI driven dynamic MI dashboards with predictive capabilities",
-      description:
-        "Management information and KPIs that evolve with your business: automated pipelines, predictive signals, and drill-downs built for actuaries and leadership.",
-      isUsp: false,
-    },
-  ] as const,
+    }
+  ] satisfies SolutionOffering[],
 };
