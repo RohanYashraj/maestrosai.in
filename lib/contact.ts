@@ -15,6 +15,7 @@ export const contactFormSchema = z.object({
 export type ContactFormData = z.infer<typeof contactFormSchema>;
 
 export const INTEREST_OPTIONS: { value: string; label: string }[] = [
+  { value: "actuarial-agents-suite", label: "Actuarial Agents Suite" },
   { value: "model-office", label: "Model office" },
   { value: "climate-risk", label: "Climate risk" },
   { value: "legacy-systems", label: "Legacy systems" },
